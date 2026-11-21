@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ArrayList;
 
 public class Pantry {
     // key = item name, value = quantity in stock
@@ -46,5 +47,15 @@ public class Pantry {
         for (Map.Entry<String, Integer> entry : stock.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
+    }
+
+    public ArrayList<String> getLowStockItems(int threshold) {
+        ArrayList<String> lowItems = new ArrayList<>();
+        for (Map.Entry<String, Integer> entry : stock.entrySet()) {
+            if (entry.getValue() <= threshold) {
+                lowItems.add(entry.getKey());
+            }
+        }
+        return lowItems;
     }
 }

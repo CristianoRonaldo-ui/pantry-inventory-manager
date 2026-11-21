@@ -20,5 +20,8 @@ public class PantryApp {
         }
 
         pantry.printInventory();
+
+        pantry.addItem("salt", 1);
+        System.out.println("Low stock (<= 3): " + pantry.getLowStockItems(3));
     }
 }
