@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class Pantry {
     // key = item name, value = quantity in stock
@@ -34,5 +35,16 @@ public class Pantry {
 
     public int getQuantity(String name) {
         return stock.getOrDefault(name, 0);
+    }
+
+    public void printInventory() {
+        System.out.println("=== Pantry Inventory ===");
+        if (stock.isEmpty()) {
+            System.out.println("(empty)");
+            return;
+        }
+        for (Map.Entry<String, Integer> entry : stock.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
     }
 }

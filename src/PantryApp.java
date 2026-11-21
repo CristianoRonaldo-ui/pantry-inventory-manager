@@ -18,5 +18,7 @@ public class PantryApp {
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
         }
+
+        pantry.printInventory();
     }
 }
